@@ -1,0 +1,20 @@
+<div class="sidnav-header">
+    <img style="width: 50%; height: 50%;" src="assets/Images/Logo.png" alt="">
+    <div class="header-text">
+        <h2>EMS</h2>
+    </div>
+</div>
+<mat-nav-list>
+    <div class="mainlist" *ngFor="let item of menuItems as MenuItem">
+        <a mat-list-item  (click)="toggleSubmenu(item)" [routerLink]="item.route">
+            <mat-icon matListItemIcon style="color: white;">{{ item.icon }}</mat-icon>
+            <span matLine style="color: white;">{{ item.label }}</span>
+            <mat-icon matSuffix *ngIf="item.label === 'Employees' && item.showSubmenu" class="expand">expand_less</mat-icon>
+            <mat-icon matSuffix *ngIf="item.label === 'Employees' && !item.showSubmenu" class="expand">expand_more</mat-icon>
+        </a>
+    
+        <div class="submenu" *ngIf="item.label === 'Employees' && item.showSubmenu">
+            <a mat-list-item routerLink="/employee" class="submenuitem"><span style="color: white;">Employee Role</span></a>
+        </div>
+    </div>
+</mat-nav-list>

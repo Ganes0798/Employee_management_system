@@ -1,0 +1,69 @@
+.sidnav-header
+{
+    padding-top: 24px;
+    text-align: center;
+
+    > img{
+        border-radius: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .header-text
+{
+    >h2{
+        margin: 0;
+        font-size: medium;
+        line-height: 1.5rem;
+        color: white;
+    }
+    > p{
+        margin: 0;
+        font-size: 0.8rem;
+    }
+}
+}
+.mainlist {
+    >a:active{
+        background-color: whitesmoke;
+    }
+    > a:hover{
+        background-color: rgb(10, 123, 131);
+    }
+}
+.submenu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 75px;
+    color: white;
+}
+
+.submenuitem{
+    color: white;
+}
+
+.expand{
+    color: white;
+    position: relative;
+    top: 7px;
+    left: 60px;
+}
+
+// .submenu {
+//     overflow-y: hidden;
+//     transition: transform 300ms ease;
+//     transform: scaleY(0);
+//     transform-origin: top;
+//     padding-left: 30px;
+//   }
+//   .submenu.expanded {
+//     transform: scaleY(1);
+//   }
+
+//   .menu-button {
+//     transition: 300ms ease-in-out;
+//     transform: rotate(0deg);
+//   }
+//   .menu-button.rotated {
+//     transform: rotate(180deg);
+//   }

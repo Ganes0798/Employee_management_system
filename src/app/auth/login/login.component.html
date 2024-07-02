@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="design">
+      <div class="pill-1 rotate-45"></div>
+      <div class="pill-2 rotate-45"></div>
+      <div class="pill-3 rotate-45"></div>
+      <div class="pill-4 rotate-45"></div>
+  </div>
+  <form [formGroup]="loginForm" class="login">
+      <h3 class="title">Admin Login</h3>
+      <div class="text-input">
+          <i class="ri-user-fill"></i>
+          <input type="text" [formControlName]="'email'" placeholder="Email Id" required>
+          <!-- <span *ngIf="this.loginForm.get('email').hasError('required')">Enter Valid Email Id</span> -->
+      </div>
+      <div class="text-input">
+          <i class="ri-lock-fill"></i>
+          <input type="password" [formControlName]="'password'" placeholder="Password" required>
+          <!-- <span *ngIf="this.loginForm.get('password').hasError('required')">Enter Valid Password</span> -->
+      </div>
+      <button class="login-btn" (click)="loginAdmin(this.loginForm.value)">LOGIN</button>
+      <a href="#" class="forgot" [routerLink]="'../forgot-pwd'">Forgot Username/Password?</a>
+      <div class="create">
+          <!-- <a href="#">Create Your Account</a> -->
+          <i class="ri-arrow-right-fill"></i>
+      </div>
+  </form>
+ 
+</div>

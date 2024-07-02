@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="design">
+        <div class="pill-1 rotate-45"></div>
+        <div class="pill-2 rotate-45"></div>
+        <div class="pill-3 rotate-45"></div>
+        <div class="pill-4 rotate-45"></div>
+    </div>
+    <form [formGroup]="forgotForm" class="login">
+        <h3 class="title">Forgot Password</h3>
+        <div class="text-input">
+            <i class="ri-user-fill"></i>
+            <input type="text" [formControlName]="'oldpwd'" placeholder="Email" required>
+            <!-- <span *ngIf="this.loginForm.get('email').hasError('required')">Enter Valid Email Id</span> -->
+        </div>
+        <div class="text-input">
+            <i class="ri-lock-fill"></i>
+            <input type="password" [formControlName]="'newpwd'" placeholder="New Password" required>
+            <!-- <span *ngIf="this.loginForm.get('password').hasError('required')">Enter Valid Password</span> -->
+        </div>
+        <button class="login-btn" (click)="forgotPWd(this.forgotForm.value)">SEND</button>
+        <a href="#" class="forgot" [routerLink]="'/login'">Go Back</a>
+        <div class="create">
+            <!-- <a href="#">Create Your Account</a> -->
+            <i class="ri-arrow-right-fill"></i>
+        </div>
+    </form>
+   
+  </div>
