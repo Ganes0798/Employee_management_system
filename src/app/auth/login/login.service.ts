@@ -18,15 +18,20 @@ export class LoginService {
     return this.http.post(`${this.apiUrl}Login`, admin);
   }
 
+  get isUserLoggedIn(){
+    const data = localStorage.getItem('token');
+    return data ? true : false;
+  }
+
 
   LogoutAdmin(){
-    localStorage.removeItem('token');
+      localStorage.clear();
     this.route.navigate(['/login']);
   }
 
 
   forgotPassword(pass:any): Observable<any>{
-         return this.http.post(`${this.apiUrl}Admin/Password`, pass);
+         return this.http.patch(`${this.apiUrl}Admin/Password`, pass);
   }
 
 

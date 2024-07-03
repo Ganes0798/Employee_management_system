@@ -7,16 +7,19 @@
   </div>
   <form [formGroup]="loginForm" class="login">
       <h3 class="title">Admin Login</h3>
-      <div class="text-input">
-          <i class="ri-user-fill"></i>
-          <input type="text" [formControlName]="'email'" placeholder="Email Id" required>
-          <!-- <span *ngIf="this.loginForm.get('email').hasError('required')">Enter Valid Email Id</span> -->
-      </div>
-      <div class="text-input">
-          <i class="ri-lock-fill"></i>
-          <input type="password" [formControlName]="'password'" placeholder="Password" required>
-          <!-- <span *ngIf="this.loginForm.get('password').hasError('required')">Enter Valid Password</span> -->
-      </div>
+      <mat-form-field style="width: 245px;">
+        <mat-label>Email Address</mat-label>
+        <input matInput type="email" [formControlName]="'email'">
+        <mat-error *ngIf="this.loginForm.get('email').hasError('required')">Enter valid email</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControlName]="'password'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="this.loginForm.get('password').hasError('required')">Enter Password</mat-error>
+      </mat-form-field>
       <button class="login-btn" (click)="loginAdmin(this.loginForm.value)">LOGIN</button>
       <a href="#" class="forgot" [routerLink]="'../forgot-pwd'">Forgot Username/Password?</a>
       <div class="create">

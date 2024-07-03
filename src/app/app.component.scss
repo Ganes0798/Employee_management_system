@@ -3179,9 +3179,6 @@ label.error {
   top: 3px;
   right: 3px;
   letter-spacing: -1px; }
-
-.navbar-header {
-  padding: 0px 30px; }
   .navbar-header .container-fluid {
     min-height: inherit;
     padding: 0 !important; }
@@ -6878,3 +6875,8 @@ body {
     width: 100% !important;
     padding: 60px 15px !important; } }
 /*     	Page 404     */
+
+
+.profile-pic {
+  cursor: pointer;
+}

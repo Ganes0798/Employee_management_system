@@ -31,10 +31,12 @@ export class ForgotPwdComponent implements OnInit {
 
 
 
-  forgotPWd(data:any){
-    if(this.forgotForm.valid)
-    {
-      this._loginService.forgotPassword(this.forgotForm.value).subscribe({
+  forgotPwd(data:any){
+    const jsonInput = {
+      "email": data.email,
+      "newPassword": data.newpwd
+    }
+      this._loginService.forgotPassword(jsonInput).subscribe({
         next: (response:any) => {
           Swal.fire({
             title: response.message + "!",
@@ -52,7 +54,6 @@ export class ForgotPwdComponent implements OnInit {
           }); 
         }
       })
-    }
      
   }
 

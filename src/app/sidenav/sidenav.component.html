@@ -14,7 +14,7 @@
         </a>
     
         <div class="submenu" *ngIf="item.label === 'Employees' && item.showSubmenu">
-            <a mat-list-item routerLink="/employee" class="submenuitem"><span style="color: white;">Employee Role</span></a>
+            <a mat-list-item [routerLink]="['/emp-role']"><span class="submenuitem"><i style="color: white;margin-right: 15px;" class="fa-regular fa-address-book"></i>Employee Role</span></a>
         </div>
     </div>
 </mat-nav-list>

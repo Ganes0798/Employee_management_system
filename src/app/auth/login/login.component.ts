@@ -7,7 +7,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterModule } from '@angular/router';
-// import { LoginService } from './login.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { LoginService } from './login.service';
 import Swal from 'sweetalert2';
@@ -31,6 +30,8 @@ export class LoginComponent implements OnInit {
   hide: any;
   loginForm: any;
   localToken: any;
+  username: any;
+  email: any;
 
   constructor(private _formBuilder: UntypedFormBuilder, 
               private _loginService: LoginService, 
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
            password: ['', Validators.required]
          });
   }
+  
 
   loginAdmin(data: any){
     const jsonInput ={
@@ -60,7 +62,11 @@ export class LoginComponent implements OnInit {
             icon: "success"
           });
             this.localToken = response.result.token
+            this.username = response.result.userName;
+            this.email = response.result.email
             localStorage.setItem('token', this.localToken);
+            localStorage.setItem('username', this.username);
+            localStorage.setItem('email', this.email);
             this.router.navigate(['/dashboard']);
          }
          else{
