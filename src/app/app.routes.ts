@@ -25,8 +25,7 @@ export const routes: Routes = [
       path: 'forgot-pwd',
       loadComponent: () => import('./auth/forgot-pwd/forgot-pwd.component').then(m => {
         return m.ForgotPwdComponent
-      }),
-      canActivate: [AuthGuard]
+      })
     },
     {
       path: 'emp-role',
